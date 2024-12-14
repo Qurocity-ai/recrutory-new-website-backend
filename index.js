@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 
 // create Job Router 
-app.use("/api/jobs",JobRouter)
+app.use("/api",JobRouter)
 
 
 // This is Basic PORT Setup Here 
