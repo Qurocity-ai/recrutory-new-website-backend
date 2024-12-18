@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const ConnectDB  = require("./config/db.js");
 const JobRouter = require("./routes/Jobs.router.js");
+const CandidateRouter = require("./routes/Candidate.router.js");
 dotenv.config();
 const app = express();
 
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 
 // create Job Router 
 app.use("/api",JobRouter)
+app.use("/candidate",CandidateRouter)
 
 
 // This is Basic PORT Setup Here 
