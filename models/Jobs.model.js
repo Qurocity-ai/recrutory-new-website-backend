@@ -42,8 +42,7 @@ const JobSchema = mongoose.Schema(
         },
         // interestedcandidate:[]
         dateposted: {
-            type: Date,
-            default: Date.now()
+            type: String,
         },
         validitydate: {
             type: String,

@@ -27,7 +27,8 @@ const getJobById = async (req, res) => {
 // Create a job
 const createJobs = async (req, res) => {
   try {
-    const newJob = new Jobs(req.body);
+    const jobData = { ...req.body, dateposted: getCurrentDate() };
+    const newJob = new Jobs(jobData);
     await newJob.save();
     res.status(201).json({ msg: "Job created successfully!" });
   } catch (error) {
