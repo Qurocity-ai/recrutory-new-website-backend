@@ -64,6 +64,29 @@ const deleteJob = async (req, res) => {
   }
 };
 
+// getting current date
+function getCurrentDate() {
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "March",
+    "April",
+    "May",
+    "Jun",
+    "July",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const month = monthNames[currentDate.getMonth()];
+  const year = currentDate.getFullYear();
+  return `${day} ${month} ${year}`;
+}
+
 // Exporting the functions together
 module.exports = {
   getAllJobs,

@@ -1,49 +1,7 @@
 const Candidate = require("../models/Candidate.model");
 const Job = require("../models/Jobs.model");
 
-// Creating Candidate and updating interestedCandidate field
-// const applyForJob = async (req, res) => {
-//     const { jobId } = req.params; 
-//     console.log("the req.param is: " + jobId);
-//     const { name, email, location, currentCtc, expectedCtc, mobile, noticePeriod, qualification, resume } = req.body;
-
-//     try {
-
-//         // 1. Create candidate
-//         const newCandidate = new Candidate({
-//             name,
-//             email,
-//             location,
-//             currentCtc,
-//             expectedCtc,
-//             mobile,
-//             noticePeriod,
-//             qualification,
-//             resume
-//         });
-
-//         const savedCandidate = await newCandidate.save();
-
-//         // 2. Update job with candidate's ID
-//         const job = await Job.findById(jobId);
-//         console.log("job is: " + job);
-//         if (!job) {
-//             return res.status(404).json({ message: 'Job not found' });
-//         }
-
-//         // handle the uniqueness of the candidates
-
-//         job.interestedcandidate.push(savedCandidate._id);
-//         await job.save();
-
-//         res.status(200).json({ message: 'Applied Successfully', candidate: savedCandidate, job });
-
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ message: 'Server error' });
-//     }
-// };
-
+// Creating Candidate and updating interestedCandidate 
 const applyForJob = async (req, res) => {
     const { jobId } = req.params;
     const { name, email, location, currentCtc, expectedCtc, mobile, noticePeriod, qualification, resume } = req.body;
