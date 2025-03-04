@@ -4,7 +4,8 @@ const dotenv = require("dotenv");
 const ConnectDB  = require("./config/db.js");
 const JobRouter = require("./routes/Jobs.router.js");
 const CandidateRouter = require("./routes/Candidate.router.js");
-const BlogRouter = require("./routes/Blogs.router.js")
+const BlogRouter = require("./routes/Blogs.router.js");
+const UserRouter = require("./routes/User.router.js");
 dotenv.config();
 const app = express();
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 app.use("/api",JobRouter)
 app.use("/candidate",CandidateRouter)
 app.use("/blog",BlogRouter)
+app.use("/user",UserRouter);
 
 
 // This is Basic PORT Setup Here 

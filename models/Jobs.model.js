@@ -20,7 +20,7 @@ const JobSchema = mongoose.Schema(
             required: true,
         },
         CTC: {
-            type: Number,
+            type: String,
             required: true,
         },
         Experience: {
