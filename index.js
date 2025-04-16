@@ -28,15 +28,14 @@ app.use("/user",UserRouter);
 
 
 // This is Basic PORT Setup Here 
-const PORT = process.env.Local_PORT||8080;
-app.listen(PORT,async()=>{
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, async () => {
     try {
-       await ConnectDB();
-         console.log(`Server is Running : http://localhost:${PORT}`);
+        await ConnectDB();
+        console.log(`Server is Running : http://localhost:${PORT}`);
     } catch (error) {
         console.log("Something Went Wrong! Sorry!")
     }
-   
-})
+});
 
 
